@@ -2,8 +2,10 @@
   "name": "hipster",
   "version": "1.0.0",
   "description": "Bot to Discord",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+   "dev": "nodemon src/index.js",
+   "build": "sucrase ./src -d ./dist --transforms imports",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/marcobrunodev/hispster/issues"
   },
-  "homepage": "https://github.com/marcobrunodev/hispster#readme"
+  "homepage": "https://github.com/marcobrunodev/hispster#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
+    "sucrase": "^3.18.1"
+  }
 }

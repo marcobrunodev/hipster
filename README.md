@@ -1,6 +1,6 @@
 # Get Started
 
-Todo
+Add .env
 
 # Features
 
