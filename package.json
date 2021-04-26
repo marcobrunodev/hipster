@@ -25,7 +25,6 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.7",
-    "sucrase": "^3.18.1"
+    "nodemon": "^2.0.7"
   }
 }
