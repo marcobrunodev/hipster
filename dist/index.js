@@ -1,9 +1,9 @@
-import dontenv from "dotenv";
-import Discord from "discord.js";
+"use strict"; function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _dotenv = require('dotenv'); var _dotenv2 = _interopRequireDefault(_dotenv);
+var _discordjs = require('discord.js'); var _discordjs2 = _interopRequireDefault(_discordjs);
 
-dontenv.config();
+_dotenv2.default.config();
 
-const bot = new Discord.Client();
+const bot = new _discordjs2.default.Client();
 const { TOKEN } = process.env;
 
 bot.on("ready", () => {
