@@ -1,0 +1,23 @@
+{
+  "name": "hipster",
+  "version": "1.0.0",
+  "description": "Bot to Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcobrunodev/hispster.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "Marco Bruno",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/marcobrunodev/hispster/issues"
+  },
+  "homepage": "https://github.com/marcobrunodev/hispster#readme"
+}
