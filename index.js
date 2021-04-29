@@ -1,8 +1,10 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 
-const bot = new Discord.Client();
-const { TOKEN } = process.env;
+const bot = new Discord.Client({
+  partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"],
+});
+const { TOKEN, ID_MESSAGE_LANG } = process.env;
 
 bot.on("ready", () => {
   console.log(`Logged in as ${bot.user.tag}`);
@@ -29,7 +31,32 @@ Assista as **5 dicas pra uma ImersãoDados mais feliz** do **Marco Bruno**:
       console.log("Sad");
       console.log(error);
     });
-  console.log("New user");
 });
+
+const toggleRole = async (reaction, user) => {
+  if (ID_MESSAGE_LANG === reaction.message.id) {
+    const guild = reaction.message.guild;
+    const member = guild.members.cache.get(user.id);
+
+    const emoji = reaction._emoji.name;
+    const regex = new RegExp(`^${emoji}`);
+
+    const role = member.guild.roles.cache.find((role) => regex.test(role.name));
+
+    if (role) {
+      if (member.roles.cache.some((r) => r.id === role.id)) {
+        member.roles.remove(role);
+      } else {
+        member.roles.add(role);
+      }
+    } else {
+      reaction.remove();
+    }
+  }
+};
+
+bot.on("messageReactionAdd", toggleRole);
+
+bot.on("messageReactionRemove", toggleRole);
 
 bot.login(TOKEN);
